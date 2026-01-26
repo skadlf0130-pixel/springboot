@@ -14,7 +14,7 @@ public class BoardController {
     }
 
     @GetMapping("/board")
-    public String getBoard(@RequestParam int id ,
+    public String getBoard(@RequestParam int id,
                            @RequestParam String title){
         System.out.println("id: "+ id);
         System.out.println("title: "+ title);
