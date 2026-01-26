@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class BoardController {
 
     @PostMapping("/board")
-    public String postBoard(){
+    public String postBoard( ){
         return "이것은 포스트 통신입니다.";
     }
 
