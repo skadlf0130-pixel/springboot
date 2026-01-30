@@ -2,11 +2,11 @@
 
 spring:
   application:
-    name: board #??????
-  datasource: #?????? ????
+    name: board # 프로젝트이름
+  datasource: # 데이터베이스 접속정보
     url: jdbc:mysql://localhost:3306/board
     username: root
     password: green502
 
-mybatis:  # Mybatis ??
-  mapper-locations: mappers/**/*.xml # xml ??? ??
+mybatis:  # Mybatis 세팅
+  mapper-locations: mappers/**/*.xml # xml 파일위치

@@ -1,7 +1,9 @@
 package com.green.board.application;
 
+import com.green.board.application.model.BoardGetOneRes;
 import com.green.board.application.model.BoardGetRes;
 import com.green.board.application.model.BoardPostReq;
+import com.green.board.application.model.BoardPutReq;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -16,11 +18,15 @@ implements한 클래스를 만들고 그 클래스를 빈 등록한다.
 주고값을 가지고 있다. 그리고 주소값을 달라고하면 DI해준다.
 
 insert, update, delete 즉, select를 제외하고는 리턴타입 int하면된다.
+select는 List or 객체.
 int값이 affectedRows값이다. 영향받은 행 값.
  */
 @Mapper
 public interface BoardMapper {
     int save(BoardPostReq req);
     List<BoardGetRes> findAll();
+    BoardGetOneRes findById(int id);
+    int update(BoardPutReq req);
+    int delete(int id);
 
 }

@@ -1,7 +1,9 @@
 package com.green.board.application;
 
+import com.green.board.application.model.BoardGetOneRes;
 import com.green.board.application.model.BoardGetRes;
 import com.green.board.application.model.BoardPostReq;
+import com.green.board.application.model.BoardPutReq;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -27,13 +29,22 @@ import java.util.List;
 @RequiredArgsConstructor //아규먼트가 있는 생성자를 자동으로 만들어 준다.(실제로 보이진 않는다.)
 public class BoardService {
     private final BoardMapper boardMapper;
-    public BoardService getBoardList;
+
 
     public int postBoard(BoardPostReq req){
         return boardMapper.save(req);
     }
     public List<BoardGetRes> getBoardList(){
         return boardMapper.findAll();
+    }
+    public BoardGetOneRes getBoardOne(int id){
+        return boardMapper.findById(id);
+    }
+    public int putBoard(BoardPutReq req){
+        return boardMapper.update(req);
+    }
+    public int delBoard(int id){
+        return boardMapper.delete(id);
     }
 
 }
